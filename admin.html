@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Quản lý sản phẩm</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+<div class="admin-container">
+
+<!-- Sidebar -->
+<div class="sidebar">
+<h2>Quản lý</h2>
+
+<ul>
+<li onclick="showSection('dashboard')">Dashboard</li>
+<li onclick="showSection('product')">Sản phẩm</li>
+
+<li onclick="showSection('orders')">Đơn hàng</li>
+
+</ul>
+</div>
+
+<!-- Main -->
+<div class="main">
+
+<h1>Admin Dashboard</h1>
+
+<!-- Dashboard -->
+<div id="dashboard" class="section">
+<div class="card">
+<h3>Tổng sản phẩm</h3>
+<p id="total-product">0</p>
+</div>
+</div>
+
+<!-- Product Manager -->
+<div id="orders" class="section" style="display:none">
+    <div id="order-list">
+        </div>
+</div>
+<div id="product" class="section" style="display:none">
+
+<h2>Thêm sản phẩm</h2>
+
+<input id="name" placeholder="Tên sản phẩm">
+<input id="price" placeholder="Giá">
+<input type="file" id="image">
+
+<button onclick="addProduct()">Thêm</button>
+
+<h2>Danh sách sản phẩm</h2>
+
+<div id="product-list"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="admin.js"></script>
+
+</body>
+</html>

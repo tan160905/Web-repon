@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Sản Phẩm - Coffee Trung Đông</title> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        /* Bổ sung một chút cho trang sản phẩm riêng */
+        .product-page {
+            padding-top: 120px; /* Để không bị Header che mất */
+            background: var(--dark-color);
+            min-height: 100vh;
+            color: var(--white-color);
+        }
+        .product-grid {
+            display: grid;
+            /* Tự động chia cột đều nhau, tối thiểu 250px mỗi cột */
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+            gap: 20px;
+            width: 100%;
+        }
+
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Đẩy nút bấm xuống đáy thẻ */
+            height: 100%; /* Giúp các thẻ trong cùng 1 hàng có độ cao bằng nhau */
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 10px;
+            transition: 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--secondary-color);
+        }
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        .price {
+            color: var(--secondary-color);
+            font-size: var(--font-size-l);
+            font-weight: var(--font-weight-bold);
+            margin: 10px 0;
+        }
+        .buy-btn {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 8px 20px;
+            border-radius: var(--border-radius-m);
+            font-weight: var(--font-weight-semibold);
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="product-container"></div>
+        <nav class="navbar section-content">
+            <a href="index.html#home" class="nav-logo">
+                <h2 class="logo-text">☕Coffee</h2>
+            </a>
+            <ul class="nav-menu">
+                <button id="menu-close-button" class="fas fa-times"></button>
+                <li class="nav-item"><a href="index.html#home" class="nav-link">Trang chủ</a></li>
+                <li class="nav-item"><a href="index.html#about" class="nav-link">Giới thiệu</a></li>
+                <li class="nav-item"><a href="sanpham.html" class="nav-link" style="color: var(--secondary-color)">Sản phẩm</a></li>
+                <li class="nav-item"><a href="index.html#testimonial" class="nav-link">Đánh giá</a></li>
+                <li class="nav-item"><a href="index.html#contact" class="nav-link">Liên hệ</a></li>
+                <li class="nav-item"><a href="cart.html" class="nav-link">Xem giỏ hàng</a></li>
+            </ul>
+            <button id="menu-open-button" class="fas fa-bars"></button>
+        </nav>
+    </header>
+
+    <!-- <main class="product-page">
+        <div class="section-content"> -->
+            <!-- <h2 class="section-title">Thực Đơn Chi Tiết</h2> -->
+            
+            <!-- <div class="product-grid">
+                <div class="product-card">
+                    <img src="images/hot-beverages.png" alt="Cà phê">
+                    <h3>Cà Phê Đen Đá</h3>
+                    <p>Hương vị đậm đà truyền thống.</p>
+                    <div class="price">25.000đ</div>
+                    <button onclick="addToCart('Cà phê đen','25000','images/gallery-6.jpg')" class="buy-btn">
+                        Thêm vào giỏ
+                        </button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/cold-beverages.png" alt="Cà phê">
+                    <h3>Bạc Xỉu</h3>
+                    <p>Sự kết hợp hoàn hảo giữa sữa và cà phê.</p>
+                    <div class="price">30.000đ</div>
+                    <button onclick="addToCart('Cà phê đen','25000','images/gallery-6.jpg')" class="buy-btn">
+                        Thêm vào giỏ
+                        </button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/desserts.png" alt="Bánh">
+                    <h3>Bánh Tiramisu</h3>
+                    <p>Ngọt ngào, mềm mịn tan trong miệng.</p>
+                    <div class="price">45.000đ</div>
+                    <button onclick="addToCart('Cà phê đen','25000','images/gallery-6.jpg')" class="buy-btn">
+                        Thêm vào giỏ
+                        </button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/special-combo.png" alt="Combo">
+                    <h3>Combo Sáng Tỉnh Táo</h3>
+                    <p>1 Cà phê + 1 Burger bò.</p>
+                    <div class="price">65.000đ</div>
+                  <button onclick="addToCart('Cà phê đen','25000','images/gallery-6.jpg')" class="buy-btn">
+                        Thêm vào giỏ
+                        </button>
+                </div>
+                <div class="product-card">
+                    <img src="images/special-combo.png" alt="Combo">
+                    <h3>Combo Sáng Tỉnh Táo</h3>
+                    <p>1 Cà phê + 1 Burger bò.</p>
+                    <div class="price">65.000đ</div>
+                   <button onclick="addToCart('Cà phê đen','25000','images/gallery-6.jpg')" class="buy-btn">
+                        Thêm vào giỏ
+                        </button>
+                </div>
+                <div class="product-card">
+                    <img src="images/special-combo.png" alt="Combo">
+                    <h3>Combo Sáng Tỉnh Táo</h3>
+                    <p>1 Cà phê + 1 Burger bò.</p>
+                    <div class="price">65.000đ</div>
+                   <button onclick="addToCart('Cà phê đen','25000','images/gallery-6.jpg')" class="buy-btn">
+                        Thêm vào giỏ
+                        </button>
+                </div>
+                <div class="product-card">
+                    <img src="images/special-combo.png" alt="Combo">
+                    <h3>Combo Sáng Tỉnh Táo</h3>
+                    <p>1 Cà phê + 1 Burger bò.</p>
+                    <div class="price">65.000đ</div>
+                   <button onclick="addToCart('Cà phê đen','25000','images/gallery-6.jpg')" class="buy-btn">
+                        Thêm vào giỏ
+                        </button>
+                </div>
+                <div class="product-card">
+                    <img src="images/special-combo.png" alt="Combo">
+                    <h3>Combo Sáng Tỉnh Táo</h3>
+                    <p>1 Cà phê + 1 Burger bò.</p>
+                    <div class="price">65.000đ</div>
+                    <button onclick="addToCart('Cà phê đen','25000','images/gallery-6.jpg')" class="buy-btn">
+                        Thêm vào giỏ
+                        </button>
+                </div>
+                <div class="product-card">
+                    <img src="images/special-combo.png" alt="Combo">
+                    <h3>Combo Sáng Tỉnh Táo</h3>
+                    <p>1 Cà phê + 1 Burger bò.</p>
+                    <div class="price">65.000đ</div>
+                    <button onclick="addToCart('Cà phê đen','25000','images/gallery-6.jpg')" class="buy-btn">
+                        Thêm vào giỏ
+                        </button>
+                </div>
+                <div class="product-card">
+                    <img src="images/special-combo.png" alt="Combo">
+                    <h3>Combo Sáng Tỉnh Táo</h3>
+                    <p>1 Cà phê + 1 Burger bò.</p>
+                    <div class="price">65.000đ</div>
+                    <button onclick="addToCart('Cà phê đen','25000','images/gallery-6.jpg')" class="buy-btn">
+                        Thêm vào giỏ
+                    </button>
+                </div>
+
+
+                <div class="product-card">
+                     <img src="images/gallery-6.jpg">
+                        <h3>Combo Sáng Tỉnh Táo</h3>
+                        <p>1 Cà phê + 1 Burger bò.</p>
+                        <div class="price">65.000đ</div>
+                        <button onclick="addToCart('Cà phê đen','25000','images/gallery-6.jpg')" class="buy-btn">
+                        Thêm vào giỏ
+                        </button>
+                </div>
+            </div>
+        </div> -->
+
+<main class="product-page">
+    <div class="section-content">
+        <h2 class="section-title">Thực Đơn Chi Tiết</h2>
+        
+        <div id="product-display" class="product-grid">
+            </div>
+    </div>
+</main>
+
+
+    <!-- </main> -->
+
+    <footer class="footer-section">
+        <div class="section-content">
+            <p class="copyright-text">© 2026 Coffee Ngon</p>
+            <div class="social-link-list">             
+                <a href="#" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+    <!-- <script src="display-products.js"></script> -->
+    <script src="sanpham.js"></script>
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

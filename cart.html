@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+<meta charset="UTF-8">
+<title>Shopping Cart</title>
+
+<link rel="stylesheet" href="cart.css">
+
+</head>
+
+<body>
+
+<div class="cart-container">
+
+<h1>Shopping Cart</h1>
+
+<div id="cart-list"></div>
+
+<p class="total">Tổng tiền: <span id="total">0</span>đ</p>
+
+<button class="order-btn" onclick="order()">Đặt hàng</button>
+
+</div>
+
+        <div id="order-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <h2>Thông tin giao hàng</h2>
+        <input type="text" id="customer-address" placeholder="Địa chỉ giao hàng" required>
+        <input type="tel" id="customer-phone" placeholder="Số điện thoại" required>
+        
+        <div class="modal-buttons">
+            <button class="confirm-btn" onclick="confirmOrder()">Xác nhận đặt hàng</button>
+            <button class="cancel-btn" onclick="closeModal()">Hủy</button>
+        </div>
+    </div>
+</div>
+
+<script src="cart.js"></script>
+</body>
+</html>

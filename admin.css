@@ -1,0 +1,122 @@
+body{
+font-family: Arial;
+margin:0;
+background:#f4f4f4;
+}
+
+.admin-container{
+display:flex;
+height:100vh;
+}
+
+.sidebar{
+width:220px;
+background:#3b141c;
+color:white;
+padding:20px;
+}
+
+.sidebar ul{
+list-style:none;
+padding:0;
+}
+
+.sidebar li{
+padding:12px;
+cursor:pointer;
+}
+
+.sidebar li:hover{
+background:#f3961c;
+}
+
+.main{
+flex:1;
+padding:30px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+width:200px;
+}
+
+input{
+padding:10px;
+margin:5px;
+}
+
+button{
+padding:10px 15px;
+background:#3b141c;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+.product-item{
+display:flex;
+gap:20px;
+align-items:center;
+margin:10px 0;
+background:white;
+padding:10px;
+border-radius:8px;
+}
+
+/* Container chứa danh sách - Chia cột để không bị tràn màn hình */
+#product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Chia thành nhiều cột, mỗi cột khoảng 180px */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Thẻ sản phẩm: Bo góc và đổ bóng nhẹ cho chuyên nghiệp */
+.product-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s;
+}
+
+/* Hình ảnh: Đây là phần quan trọng nhất để không bị "quá to" */
+.product-item img {
+    width: 100%;           /* Chiều rộng theo thẻ cha */
+    height: 140px;         /* Cố định chiều cao */
+    object-fit: cover;     /* Giúp ảnh không bị méo */
+    border-radius: 8px;
+}
+
+/* Tên và giá */
+.product-item h4 {
+    font-size: 1rem;
+    margin: 10px 0 5px;
+    color: #3b141c;
+    height: 2.4em;        /* Cố định chiều cao chữ để các thẻ bằng nhau */
+    overflow: hidden;
+}
+
+.product-item p {
+    color: #f3961c;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Nút xóa nhỏ gọn lại */
+.product-item button {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    width: 80%;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box login">
+            <form action="">
+                <h1>Đăng nhập</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="username" required>
+                    <i class="fa-regular fa-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="password">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <div class="forgot-link">
+                    <a href="">Quên mật khẩu</a>
+                </div>
+                <button type="submit" class="btn">Đăng nhập</button>
+                <p>hoặc đăng nhập bằng các nền tảng mạng xã hội</p>
+                <div class="social-icons">
+                    <a href="" class="google"><i class="fa-brands fa-google"></i></a>
+                    <a href="" class="facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="" class="google"><i class="fa-brands fa-github"></i></a>
+                    <a href="" class="google"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </form>
+        </div>
+        <div class="form-box register">
+            <form action="">
+                <h1>Đăng kí</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Tên đăng nhập">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+                 <div class="input-box">
+                    <input type="email" placeholder="vui lòng nhập email" 
+                    pattern="[a-z0-9._%+-]+@gmail\.com$"oninvalid="this.setCustomValidity('Vui lòng nhập đúng định dạng email có @gmail.com')" 
+                    oninput="this.setCustomValidity('')" required>
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="vui lòng nhập mật khẩu" required>
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                    <div class="input-box">
+                    <input type="password" placeholder="nhập lại mật khẩu" required>
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <button type="submit" class="btn">Đăng kí</button>
+                <p>hoặc đăng kí bằng các nền tảng mạng xã hội</p>
+                <div class="social-icons">
+                    <a href="" class="google"><i class="fa-brands fa-google"></i></a>
+                    <a href="" class="facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="" class="github"><i class="fa-brands fa-github"></i></a>
+                    <a href="" class="google"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </form>
+        </div>
+
+        <div class="toggle-box">
+            <div class="toggle-panel toggle-left">
+                <h1>Xin chào quý khách ☕</h1>
+                <p>bạn không có tài khoản?</p>
+                <button class="btn register-btn">Đăng kí</button>
+            </div>
+
+            <div class="toggle-panel toggle-right">
+                <h1>Xin chào quý khách ☕</h1>
+                <p>Đã có tài khoản?</p>
+                <button class="btn login-btn">Đăng nhập</button>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="login.js" defer></script>
+</body>
+</html>

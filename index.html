@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coffee shop</title> 
+    <link rel="stylesheet" href="style.css">
+    <!-- linking font awesome for icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+   <!-- linking swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+</head>
+<body>
+    <!--header/navbar-->
+    <header>
+        <nav class="navbar section-content">
+            <a href="#home" class="nav-logo">
+                <h2 class="logo-text">☕Coffee Ngon</h2>
+            </a>
+            <ul class="nav-menu">
+                <button id="menu-close-button" class="fas fa-times"></button>
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">Giới thiệu</a>
+                </li>
+                <li class="nav-item">
+                    <a href="sanpham.html" class="nav-link">Sản phẩm</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonial" class="nav-link">Đánh giá</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#gallery" class="nav-link">Thư viện ảnh</a>
+                </li>
+                 <li class="nav-item">
+                    <a href="#contact" class="nav-link">Liên hệ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin.html" class="nav-link">
+                        <i class="fa-solid fa-user-shield"></i> Admin
+                    </a>
+                </li>
+                <li class="nav-item" id="auth-section">
+                    <a href="login.html" class="nav-link">Đăng nhập</a>
+                </li>
+                <li class="nav-item user-container" id="user-info" style="display: none;">
+                    <div class="user-header" onclick="toggleUserMenu(event)" style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span id="user-name"></span>
+                        <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i>
+                    </div>
+    
+                    <div id="user-menu" class="user-dropdown">
+                        <a href="javascript:void(0)" onclick="logout()">
+                            <i class="fa-solid fa-power-off"></i> Đăng xuất
+                        </a>
+                    </div>
+                </li>
+
+            </ul>
+
+             <button id="menu-open-button" class="fas fa-bars"></button>
+
+        </nav>
+    </header>
+    
+    <main>
+       <!--Hero section-->
+       <section class="hero-section" id="home">
+        <div class="section-content">
+            <div class="hero-details">
+                <h2 class="title">Coffee Siu Ngon</h2>
+                <h3 class="subtitle">Giúp ta tỉnh táo cho một ngày mới❤️</h3>
+                <p class="description">Chào mừng bạn đến với coffee Ngon nơi giúp bạn thư giãn mỗi ngày sau giờ làm việc mệt mỏi</p>
+                <div class="buttons">
+                    <a href="#" class="button order-now">Gọi món ngay</a>
+                    <a href="#" class="button contact-us">Liện hệ chúng tôi</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <img src="images/coffee-hero-section.png" alt="" class="hero-image">
+            </div>
+        </div>
+       </section>
+       <!--about-->
+       <section class="about-section" id="about">
+        <div class="section-content">
+            <div class="about-image-wrapper">
+                <img src="images/photo-1-15673114205571038686569.jpg" alt="about" class="about-image">
+            </div>
+            <div class="about-details">
+                <h2 class="section-title">Về chúng tôi</h2>
+                <p class="text">Tại Coffee Ngon, chúng tôi tự hào mang đến một không gian
+                                thưởng thức cà phê đậm chất truyền thống, nơi khách hàng có thể tìm thấy
+                                 sự thư thái tuyệt đối và tận hưởng những hương vị tinh túy trong từng giọt cà phê giữa một bầu không khí ấm cúng và thân thuộc.</p>
+                <div class="social-link-list">
+                    <a href="" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>               
+                </div>
+            </div>
+        </div>
+       </section>
+
+       <!--menu-->
+
+       <section class="menu-section" id="menu">
+        <h2 class="section-title">Sản Phẩm</h2>
+        <div class="section-content">
+           <ul class="menu-list">
+            <li class="menu-item">
+                <img src="images/hot-beverages.png" alt="hot-beverages" class="menu-image">
+                <h3 class="name">Đồ uống nóng</h3>
+                <p class="text">cà phê nóng hổi giúp bạn cảm thấy tỉnh táo và tràn đầy năng lượng.</p>
+            </li>
+            <li class="menu-item">
+                <img src="images/cold-beverages.png" alt="cold-beverages" class="menu-image">
+                <h3 class="name">Đồ uống lạnh</h3>
+                <p class="text">Cà phê lạnh béo ngậy, mát lạnh giúp bạn giải khát và thư giãn. 🧊☕</p>
+            </li>
+            <li class="menu-item">
+                <img src="images/refreshment.png" alt="refreshments" class="menu-image">
+                <h3 class="name">Đồ giải khát</h3>
+                <p class="text">Nước trái cây mát lạnh giúp bạn giải khát và thư giãn.</p>
+            </li>
+            <li class="menu-item">
+                <img src="images/special-combo.png" alt="special-combo" class="menu-image">
+                <h3 class="name">Combo Đặt biệt</h3>
+                <p class="text">Những combo ăn uống yêu thích của bạn. 🍔☕</p>
+            </li>
+            <li class="menu-item">
+                <img src="images/desserts.png" alt="hot-beverages" class="menu-image">
+                <h3 class="name">Món tráng miệng 🍰</h3>
+                <p class="text">Mang đến trải nghiệm ẩm thực tuyệt vời cho bạn. 🍰</p>
+            </li>
+            <li class="menu-item">
+                <img src="images/burger-frenchfries.png" alt="hot-beverages" class="menu-image">
+                <h3 class="name">Burger và Khoai tây chiên 🍔</h3>
+                <p class="text">Món ăn nhanh giúp bạn nhanh chóng lấp đầy cơn đói.🍔</p>
+            </li>
+           </ul> 
+        </div>
+       </section>
+
+<!-- testimonials -->
+       <section class="testimonials-section" id="testimonial">
+        <h2 class="section-title">Đánh giá</h2>
+        <div class="section-content">
+            <div class="slider-container swiper">
+                <div class="slider-wrapper">
+                    <ul class="testimonials-list swiper-wrapper">
+                        <li class="testimonial swiper-slide">
+                           <img src="images/stjpg-1758602514846.webp" alt="" class="user-image"> 
+                           <h3 class="name">Sơn Tùng MTP</h3>
+                           <i class="feedback">“Quán có không gian rất chill, cà phê thơm và phục vụ cực kỳ thân thiện. Đây là một nơi rất phù hợp để thư giãn hoặc làm việc cùng bạn bè.”</i>
+                        </li>  
+                        <li class="testimonial swiper-slide">
+                           <img src="images/e008b813102582aeb4d762e9d139d7cb.jpg" alt="" class="user-image"> 
+                           <h3 class="name">Đen Vâu</h3>
+                           <i class="feedback">“Quán có không gian rất yên tĩnh và dễ chịu. Ngồi nhâm nhi ly cà phê, nghe nhạc nhẹ là đủ để có cảm hứng làm việc và sáng tạo.”</i>
+                        </li> 
+                           <li class="testimonial swiper-slide">
+                           <img src="images/tran-thanh-1733279791626655193309.webp" alt="" class="user-image"> 
+                           <h3 class="name">Trấn Thành</h3>
+                           <i class="feedback">“Cà phê rất ngon, menu đa dạng và phục vụ nhanh. Không gian quán đẹp nên rất thích hợp để gặp gỡ bạn bè.”</i>
+                        </li> 
+                           <li class="testimonial swiper-slide">
+                           <img src="images/my-tam-phunutoday1.jpg" alt="" class="user-image"> 
+                           <h3 class="name">Mỹ Tâm</h3>
+                           <i class="feedback">“Quán được thiết kế rất tinh tế và ấm cúng. Đây là một nơi tuyệt vời để thư giãn sau một ngày làm việc.”</i>
+                        </li> 
+                           <li class="testimonial swiper-slide">
+                           <img src="images/dansaorunningmanvietnammungngokienhuy11-16804092761541287814338.webp" alt="" class="user-image"> 
+                           <h3 class="name">Ngô Kiến Huy</h3>
+                           <i class="feedback">“Không gian quán rất trẻ trung và thoải mái. Cà phê đậm vị, nhân viên phục vụ thân thiện nên mình rất thích.”</i>
+                        </li> 
+                    </ul>
+
+                 <div class="swiper-pagination"></div>
+                 <div class="swiper-slide-button swiper-button-prev"></div>
+                 <div class="swiper-slide-button swiper-button-next"></div>
+
+                </div>
+            </div>
+        </div>
+       </section>
+<!-- gallery-section -->
+       <section class="gallery-section" id="gallery">
+        <h2 class="section-title">Thư viện ảnh</h2>
+        <div class="section-content">
+            <ul class="gallery-list">
+                <li class="gallery-item">
+                    <img src="images/gallery-1.jpg" alt="gallery" class="gallery-image">
+                </li>
+                 <li class="gallery-item">
+                    <img src="images/gallery-2.jpg" alt="gallery" class="gallery-image">
+                </li>
+                 <li class="gallery-item">
+                    <img src="images/gallery-3.jpg" alt="gallery" class="gallery-image">
+                </li>
+                 <li class="gallery-item">
+                    <img src="images/gallery-4.jpg" alt="gallery" class="gallery-image">
+                </li>
+                 <li class="gallery-item">
+                    <img src="images/gallery-5.jpg" alt="gallery" class="gallery-image">
+                </li>
+                 <li class="gallery-item">
+                    <img src="images/gallery-6.jpg" alt="gallery" class="gallery-image">
+                </li>
+            </ul>
+        </div>
+       </section>
+
+       <!-- contact -->
+        <section class="contact-section" id="contact">
+            <h2 class="section-title">Liện hệ chúng tôi</h2>
+            <div class="section-content">
+                <ul class="contact-info-list">
+                    <li class="contact-info">
+                        <i class="fa-solid fa-location-crosshairs"></i>
+                        <p>Ninh Kiều,Cần Thơ</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-solid fa-envelope"></i>
+                        <p>coffeengon@gmail.com</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-solid fa-phone"></i>
+                        <p>0123-456-789</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-solid fa-clock"></i>
+                        <p>Thứ 2 - Thứ 7: Mở cửa 7:00 - Đóng cửa 22:00</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-solid fa-clock"></i>
+                        <p>Chủ nhật: Quán off</p>
+                    </li>
+                    <li class="contact-info">
+                        <i class="fa-solid fa-globe"></i>
+                        <p>wwwtanhoccodeweb.com</p>
+                    </li>
+                </ul>
+
+                <form action="#" class="contact-form">
+                    <input type="text" placeholder="Tên của bạn" class="form-input" required>
+                    <input type="email" placeholder="Email của bạn" class="form-input" required>
+                    <textarea placeholder="Ý kiên của bạn" class="form-input"></textarea>
+                    <button class="submit-section">submit</button>
+                </form>
+            </div>
+        </section>
+<!-- footer -->
+        <footer class="footer-section">
+            <div class="section-content">
+                <p class="copyright-text">© 2026 Coffee Ngon</p>
+
+                <div class="social-link-list">             
+                    <a href="#" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>                            
+                </div>
+                <p class="policy-text">
+                    <a href="#" class="policy-link">Privacy policy</a>
+                    <span class="separator">.</span>
+                    <a href="#" class="policy-link">Refund policy</a>
+                </p>
+            </div>
+        </footer>
+    </main>
+   
+   <!-- linking swiper js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <!-- linking custom script -->
+    <script src="script.js"></script>
+</body>
+</html>
